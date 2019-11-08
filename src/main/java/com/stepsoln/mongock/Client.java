@@ -1,9 +1,10 @@
 package com.stepsoln.mongock;
 
+import java.util.List;
+import javax.persistence.ElementCollection;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
@@ -11,10 +12,18 @@ import lombok.ToString;
 @Setter
 @ToString
 @Document("client")
-@NoArgsConstructor
-@AllArgsConstructor
 public class Client
 {
-	private String name;
-	private String surname;
+	@Id
+	private String id;
+	private Name name;
+	@ElementCollection
+	private List<Lob> lobs;
+	public static Client newInstance(Name name, List<Lob> lobs)
+	{
+		Client c = new Client();
+		c.name = name;
+		c.lobs = lobs;
+		return c;
+	}
 }

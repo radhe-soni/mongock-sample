@@ -14,7 +14,8 @@ dependencies {
 	compileOnly 'org.projectlombok:lombok'
 	testCompileOnly 'org.projectlombok:lombok'
 	annotationProcessor "org.projectlombok:lombok"
-	api 'com.github.cloudyrock.mongock:mongock-spring:2.0.0'
+	api 'com.github.cloudyrock.mongock:mongock-spring:3.0.3.BETA'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb-reactive'
+	implementation 'javax.persistence:javax.persistence-api'
 }
